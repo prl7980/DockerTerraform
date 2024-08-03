@@ -18,6 +18,7 @@ resource "docker_container" "sqlserver" {
   image = docker_image.sqlserver.image_id
   name  = "sqlserver"
   hostname = "sqlserver"
+  platform = "linux/amd64"
   ports {
     internal = 1433
     external = 1433
