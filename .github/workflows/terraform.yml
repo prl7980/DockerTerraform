@@ -17,7 +17,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: infra/terraform # <- change this to your Terraform folder
+        working-directory: docker-postgresql # <- change this to your Terraform folder
 
     steps:
     # Checkout the repository to the GitHub Actions runner
