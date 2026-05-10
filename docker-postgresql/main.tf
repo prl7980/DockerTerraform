@@ -2,7 +2,7 @@ terraform {
   required_providers {
     docker = {
       source  = "kreuzwerker/docker"
-      version = "~> 3.0.1"
+      version = "4.3.0"
     }
   }
 }
@@ -19,7 +19,7 @@ resource "docker_container" "postgres" {
   name  = "postgres"
   ports {
     internal = 5432
-    external = 5432
+    external = 5433
   }
   env = [
     "POSTGRES_USER=postgres",
