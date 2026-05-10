@@ -1,4 +1,4 @@
-name: 'Terraform'
+name: 'Build PostgreSQL'
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
   terraform:
     name: 'Terraform'
     runs-on: ubuntu-latest
-    environment: production
+    environment: desktop
 
     defaults:
       run:
