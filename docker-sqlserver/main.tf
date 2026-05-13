@@ -34,4 +34,3 @@ resource "docker_container" "sqlserver" {
     "MSSQL_SA_PASSWORD=${var.db_password}",
   ]
 }
-

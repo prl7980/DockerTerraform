@@ -9,6 +9,11 @@ terraform {
 
 provider "docker" {}
 
+variable "db_password" {
+  type      = string
+  sensitive = true
+}
+
 resource "docker_image" "postgres" {
   name         = "postgres:latest"
   keep_locally = false
@@ -17,14 +22,14 @@ resource "docker_image" "postgres" {
 resource "docker_container" "postgres" {
   image = docker_image.postgres.image_id
   name  = "postgres"
+
   ports {
     internal = 5432
     external = 5433
   }
+
   env = [
     "POSTGRES_USER=postgres",
-    "POSTGRES_PASSWORD=P@ssw0rd123",
+    "POSTGRES_PASSWORD=${var.db_password}",
   ]
 }
-
-
